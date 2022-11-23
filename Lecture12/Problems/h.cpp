@@ -3,8 +3,8 @@ using namespace std;
 
 bool isLater(int a[], int b[]) {
   for (int i = 0; i < 3; ++i) {
-    if (a[i] > b[i]) return false;
-    if (a[i] < b[i]) return true;
+    if (a[i] < b[i]) return false;
+    if (a[i] > b[i]) return true;
   }
   
   return false;
@@ -21,7 +21,7 @@ int main() {
   }
 
   for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
+    for (int j = i + 1; j < n; ++j) {
       if (isLater(a[i], a[j])) {
         swap(a[i], a[j]);
       }
